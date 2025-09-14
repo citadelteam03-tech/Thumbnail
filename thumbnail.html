@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Thumbnail Generator</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Thumbnail Generator</h1>
+      <p>
+        Upload an image to generate a 1280×720 thumbnail with smart background
+        padding.
+      </p>
+
+      <!-- Drag and Drop Area -->
+      <div id="drop-area" class="drop-area">
+        <p>Drag & Drop an Image here</p>
+        <p>or</p>
+        <label for="upload">Click to upload</label>
+        <input type="file" id="upload" accept="image/*" />
+      </div>
+
+      <!-- Background Color Preview and Picker -->
+      <div class="color-container">
+        <label for="color-picker">Padding Background Color</label>
+        <p class="color-description">
+          Choose the background color for padding if the image is not 16:9. This
+          will only be visible if padding is added.
+        </p>
+        <div class="color-box">
+          <div class="preview-container">
+            <p>Color Preview</p>
+            <div id="color-preview" class="color-preview"></div>
+          </div>
+          <div class="color-picker-container">
+            <label for="color-picker">Select a color</label>
+            <input type="color" id="color-picker" value="#000000" />
+          </div>
+        </div>
+        <button
+          id="restore-color-btn"
+          class="restore-color-btn"
+          style="display: none"
+        >
+          Restore Original Color
+        </button>
+      </div>
+
+      <!-- Preview Image -->
+      <div class="preview-wrapper">
+        <img id="thumbnail" alt="Thumbnail preview" />
+      </div>
+
+      <!-- Download Button -->
+      <button id="downloadBtn">Download Thumbnail</button>
+      <canvas id="canvas" style="display: none"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
